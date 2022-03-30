@@ -1,0 +1,210 @@
+//https://replit.com/languages/swift
+// can the person drive? (legal age of driving is 17)
+//Logica AND (&&) OR a Logical OR (||)
+let personAge = 25
+if (personAge >= 17 && personAge <= 21) {
+    print("You can drive a beginner vehicle!!")
+}
+else if (personAge > 21) {
+    print("You can vote in some countries!")
+}
+else {
+    print("Sorry, you cannot drive")
+    print("You must wait \(17-personAge) more years")
+}
+print("Done the program!")
+
+// >= <=
+// Switch
+//   Choose from a variety of conditions
+//   Conditions are based on == (gpa = 4, then A, gpa = 3.7 then B…)
+//   Multiple values can execute the logic (case: snowy, windy, hailstorm, etc)
+
+let weather = "SNOWY"
+switch (weather) {
+	case "rainy":
+		print("Bring an umbrella!")
+	case "snowy", "icy", "hailstorm", "windy":
+		print("Bring warm clothing")
+	case "sunny":
+		print("Have a beautiful day!")
+	default:
+		print("Error, I can't process this weather type!")
+}
+
+//loops:
+//  Count controlled loop: A loop that interates a fixed number of times (for loop)
+//  Controlled loop: A loop that iterates based on a condition (while / do while )
+
+// Count Controlled Loop (For loop)
+
+for i in 1...5{
+	print("Loop #\(i): Hello world!")
+}
+// 1...5 : RANGE (... = inclusive range: it starts at 1 an includes 5)
+
+print("-------")
+for i in 99...105 {
+		print("Loop #\(i): Hello world!")
+}
+
+print("-------")
+// ..<    : non-inclusive range:  starts a 0 and ends at 3 (does not include the 4)
+// for (let i = 0; i < 4; i++)
+for i in 0..<4 {
+		print("Loop #\(i): Hello world!")
+}
+
+print("---")
+ 
+for i in 99..<110 {
+    print("Loop #\(i): Hello world!")
+}
+
+print("-----")
+for i in (1...5).reversed() {
+    print("Loop #\(i): Hello world!")
+}
+
+//Condition controlled loop
+//  While loop 
+//  Do-While → REPEAT  WHILE
+
+//while Loops
+print("-----")
+var index = 0
+while (index < 5) {
+    print("This is the way! \(index)")
+    index = index + 1       // ++ and -- operators don't work! bye!
+ }
+
+// repeat -until
+// Break and continue work
+//    Break: exit the loop early
+//    Continue: skip the remaining code and go back to the top of the loop
+
+//print("-----")
+//var numbers = 25
+//repeat {
+//    
+//	if (numbers == 9 || numbers == 1){
+//       continue
+//	} else if (numbers == 7) {
+//		break
+//	}
+//	print("Here is some output \(numbers)")
+//    numbers -= 2
+//} while (numbers >= 0)
+
+//ARRAYS!
+// - collection of ordered data
+// - list of names, list of student grades, a list of receipts, a list of car objects
+
+print("-----")
+var studentGrades = [50, 30, 80, 90, 100]
+print(studentGrades)
+// - explicit array delcariton (you specify what the data type of the array is)
+// array operations
+// - access a value
+print(studentGrades[0])
+print(studentGrades[1])
+print(studentGrades[2])
+print(studentGrades[3])
+print(studentGrades[4])
+// - update a value
+studentGrades[0] = 100
+print(studentGrades)
+
+print("-----")
+var friends = ["Peter", "Emily", "Abigail"]
+for i in 0..<friends.count {
+    print("Your friend in position \(i) is \(friends[i])")
+}
+
+print("-----")
+// Using an index to modify items in the array permanently
+friends = ["Peter", "Emily", "Abigail"]
+for i in 0..<friends.count {
+    print("Your friend in position \(i) is \(friends[i])")
+    friends[i] = friends[i] + " Smith"
+}
+print(friends)
+
+// If you want get the total number of items in your array
+print("You have \(friends.count) friends!")
+
+
+// Is teh array empty?
+print(friends.isEmpty)  // return true if the array is empty, false otherwise
+
+// add things to the array
+var fruits = ["apple", "banana"]
+print(fruits)
+ 
+// add to the end of teh array
+print("-----")
+fruits.append("carrot")
+fruits.append("donut")
+fruits.append("eggplant")
+print(fruits)
+
+// add to a specific position
+print("-----")
+var animals = ["zebra", "pig", "cow"]
+print(animals)
+animals.insert("fish", at: 1)
+print(animals)
+
+// remove an item at a specific position
+animals.remove(at: 0)
+print(animals)
+ 
+// clear the entire arra
+animals.removeAll()
+print(animals)
+print("The number of items is : \(animals.count)")
+
+//Reversing and sorting the array 
+animals = ["zebra", "pig", "watermelon", "dog"]
+animals.reverse()
+print(animals)
+animals.sort()
+print(animals)
+
+// not okay
+//var cars:[String] = ["Kia", "Honda", 23432432] 
+// Error
+
+// this is okay
+var cars:[String] = ["Kia", "Honda", "Toyota"]
+var gpas:[Double] = [3.0, 4.21222, 1.855]
+var isSleeping:[Bool] = [true, true, true, false, true, false]
+ 
+// mixed array of data
+var mixed:[Any] = ["Kia", 3.0, true, ["fish", "burger", "salad"], 555]
+ 
+ 
+print(mixed)
+
+//Dictionary:
+print("-----") 
+var dog:[String:Any] = [
+    "name":"Peter",
+    "breed":"Poodle",
+    "age":1,
+    "isSleeping":false
+]
+print(dog)
+
+// access
+print(dog["name"])
+print(dog["age"])
+// update
+dog["name"] = "Rover"
+print(dog)
+ 
+// delete a key-value pair
+dog["name"] = nil
+print(dog)
+
+

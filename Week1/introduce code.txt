@@ -1,0 +1,74 @@
+//https://replit.com/languages/swift
+
+//output to the console
+print("Hello, world!")
+
+//standard math operators
+print(3+4*1-15/2)
+print("Hello, world!")
+print(3 % 2) // moduleus calculates remainder
+
+//variable
+//2 types of variables
+// - read only variables: after you assign the value,
+// you cannont change it (constant)
+// - weitable variables: you can assign the variable
+// a value, and you can change it after
+
+// read only variable
+let x = 25
+print(x)
+// x = 90 not work
+
+// writeable
+var z = 25
+print(z)
+z = 90
+print(z)
+
+// I did not declare a data type
+// all variables have a data type (number, string, boolean)
+
+// in swift, you have options for declaring a variables
+// 1. Implicit variable declaration
+// - you do NOT define the data type
+// - instead, you allow Swift to "guess" or "interpret"
+
+// create a varible called s and set the
+// data to a string
+//var s:String = "Hello world!"
+var s = "Hello world"
+print(s)
+
+// swift is strongly typed
+// - once you assign a type, you cannot change
+// it!
+// z = 25555
+// print(z)
+
+// data
+// Int
+// Double
+// Float
+// String
+// Boolean
+
+let a:Int = 5
+let b:Double = 88.15555
+let c:Float = 2334.111
+let d:String = "Bye!"
+let e:Bool = true /// false
+
+// conditionals
+// if , if-else, switch
+
+// can the person drive? (legal age of driving is 17)
+let personAge = 12
+if (personAge >= 17){
+	print("You can drive!")
+} else {
+	print("Sorry, you cannot drive")
+	print("You must wait \(17-personAge) more years")
+}
+print("Done the program")
+

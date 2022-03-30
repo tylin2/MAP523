@@ -1,0 +1,166 @@
+class Dog {
+    // properties
+    // 1. stored property (this is the traidtional "property" that you're used to seeing)
+    // 2. computed property (this is unique to swift/kotlin)
+    
+    // 1. stored properties
+    // --------------------
+    var name:String  = "Polo"
+    var age:Int = 5
+    var breed:String = "Poodle"
+    var isSleeping:Bool = false
+
+	// 2. Computed property
+    // ----------------------
+    var ageInHumanYears:Int {
+        // this is the value that will be returned when someone tries to access this property
+        get {
+            return self.age * 7
+        }
+        
+    }
+
+    
+    // 2. initialize the class
+    init() {
+        
+    }
+    
+    // custom initializer
+    init(n:String, b:String) {
+        self.name = n
+        self.breed = b
+    }
+    init(name:String, age:Int, breed:String, isSleeping:Bool) {
+        self.name = name
+        self.age = age
+        self.breed = breed
+        self.isSleeping = isSleeping
+    }
+    
+       // functions (methods)
+    func sayHello() {
+        print("WOOF! WOOF!")
+    }
+
+	// functions accept parameters
+    func eatingDinner(favFood:String) {
+        print("\(self.name) is eating \(favFood)")
+    }
+
+	  // function that returns a value
+    func wantsToPlay() -> Bool {
+		 // OPTION 1: Using an if-else statement
+        if (self.isSleeping == false) {
+            return true
+        }
+        else {
+            return false
+        }
+	   // OPTION 2: you can just do this
+//        return !self.isSleeping
+
+    }
+
+//	func getAgeInHumanYears() -> Int {
+//        //1 dog year = 7 human years
+//        return self.age * 7
+//    }
+
+
+
+}
+
+// lets write our main program
+let d1 = Dog()
+print(d1)
+print(d1.age)
+print(d1.name)
+print(d1.breed)
+
+let d2 = Dog(n: "Rover", b: "Golden Retriever")
+print("The second dog is named \(d2.name)")
+ 
+let d3 = Dog(name: "Fido", age: 4, breed: "Bulldog", isSleeping: true)
+print("The third dog is a \(d3.breed). Is \(d3.name) sleeping? \(d3.isSleeping)")
+d3.sayHello()
+d3.eatingDinner(favFood: "steak")
+d3.eatingDinner(favFood: "apple")
+d3.eatingDinner(favFood: "cheese")
+d3.eatingDinner(favFood: "dog snacks")
+d3.eatingDinner(favFood: "yogurt")
+
+if (d3.wantsToPlay()) {
+    print("Let's take \(d3.name) to the park!")
+}
+else {
+    print("\(d3.name) is in a bad mood and doesn't want to play")
+}
+
+//print("How old is Fido in human years? \(d3.getAgeInHumanYears())")
+print("how old is fido? \(d3.ageInHumanYears)")
+
+
+
+print("-------------------------------------")
+/*
+// - diameter
+class Circle {
+    var radius:Double
+    init(r:Double) {
+        self.radius = r
+    }
+    func getArea() -> Double {
+        // r * r * pi
+        return self.radius * self.radius * Double.pi
+    }
+    func getDiameter() -> Double {
+        // 2r
+        return 2 * self.radius
+    }
+    func getCircumference() -> Double {
+        // 2 * pi * ri
+        return 2 * Double.pi * self.radius
+    }
+}
+ 
+ 
+var c1 = Circle(r: 5)
+print("Radius: \(c1.radius)")
+print("Diameter: \(c1.getDiameter())")
+print("Area: \(c1.getArea())")
+print("Area: \(c1.getCircumference())")
+*/
+
+class Circle {
+    // stored property
+    var radius:Double
+    
+    // computed property
+    var diameter:Double {
+        return 2 * self.radius
+    }
+    
+    var area:Double {
+        return self.radius * self.radius * Double.pi
+    }
+    
+    // this syntax is the "long version" of the above syntax
+    var circumference:Double {
+        get {
+            return 2 * Double.pi * self.radius
+        }
+    }
+    
+    init(r:Double) {
+        self.radius = r
+    }
+}
+ 
+var c1 = Circle(r: 5)
+print("Radius: \(c1.radius)")
+print("Diameter: \(c1.diameter)")
+print("Area: \(c1.area)")
+print("Circumeference: \(c1.circumference)")
+
+
